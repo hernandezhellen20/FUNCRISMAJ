@@ -267,6 +267,37 @@
         @media(max-width:760px) { .programs-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } nav { position:sticky; } nav a { margin:3px 4px; font-size:.86rem; } }
         @media(max-width:520px) { .programs-grid { grid-template-columns:1fr; } .container { padding:0 14px; margin:20px auto; } .hero { padding:28px 20px; } header { padding:28px 14px; } .convenios-content { padding:24px; } }
 
+
+        /* Donaciones y asistente virtual FUNCRISMAJ */
+        .donations-section { margin:48px 0; padding:clamp(26px,5vw,48px); background:linear-gradient(135deg,#fff 0%,#f4f8fc 100%); border:1px solid #e3eaf2; border-radius:20px; box-shadow:0 10px 28px rgba(25,48,75,.07); }
+        .donations-section h2 { color:var(--azul); text-align:center; margin:8px 0; font-size:clamp(1.8rem,4vw,2.35rem); }
+        .donations-intro { max-width:760px; margin:0 auto 26px; text-align:center; color:#526174; }
+        .donation-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+        .donation-card { background:#fff; border:1px solid #e7edf4; border-radius:16px; padding:22px; box-shadow:0 6px 18px rgba(25,48,75,.05); }
+        .donation-card .donation-icon { color:#b68b35; font-size:1.8rem; }
+        .donation-card h3 { color:var(--azul); margin:10px 0 6px; }
+        .donation-card p { color:#5b6776; margin:0 0 14px; }
+        .donation-action { display:inline-block; background:#159b61; color:#fff; text-decoration:none; padding:10px 16px; border-radius:24px; font-weight:700; }
+        .donation-action:hover { background:#117a4d; }
+        .qr-pending { margin:22px auto 0; max-width:680px; padding:16px 18px; text-align:center; background:#fff9e9; border:1px dashed #c9a34e; border-radius:14px; color:#6f5726; }
+        .qr-pending strong { display:block; margin-bottom:4px; }
+        .assistant-launcher { position:fixed; right:22px; bottom:22px; z-index:2000; border:0; border-radius:999px; padding:15px 20px; background:#173f70; color:#fff; font-weight:800; box-shadow:0 8px 24px rgba(0,0,0,.25); cursor:pointer; }
+        .assistant-launcher i { margin-right:8px; color:#f2cf7a; }
+        .assistant-panel { display:none; position:fixed; right:22px; bottom:88px; width:min(365px,calc(100vw - 28px)); max-height: min(560px,calc(100vh - 125px)); z-index:2001; background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,.25); border:1px solid #dce5ef; }
+        .assistant-panel.open { display:flex; flex-direction:column; }
+        .assistant-head { background:#173f70; color:#fff; padding:15px 17px; display:flex; justify-content:space-between; align-items:center; }
+        .assistant-head small { display:block; color:#e8eef7; font-weight:400; }
+        .assistant-close { border:0; background:transparent; color:#fff; font-size:1.35rem; cursor:pointer; }
+        .assistant-messages { padding:15px; overflow:auto; flex:1; background:#f7f9fc; }
+        .assistant-message { padding:11px 13px; margin:0 0 10px; border-radius:13px; max-width:92%; font-size:.94rem; white-space:pre-line; }
+        .assistant-message.bot { background:#fff; border:1px solid #e3eaf2; color:#334155; }
+        .assistant-message.user { background:#dceafa; color:#173f70; margin-left:auto; }
+        .assistant-choices { display:grid; gap:8px; padding:12px 14px; border-top:1px solid #e5ebf2; }
+        .assistant-choices button { border:1px solid #cbd8e6; background:#fff; color:#173f70; border-radius:10px; padding:9px 11px; text-align:left; cursor:pointer; font-weight:600; }
+        .assistant-choices button:hover { background:#edf4fb; }
+        .assistant-footnote { font-size:.75rem; color:#64748b; padding:0 14px 12px; background:#fff; }
+        @media(max-width:600px) { .donation-grid { grid-template-columns:1fr; } .assistant-launcher { right:14px; bottom:14px; } .assistant-panel { right:14px; bottom:78px; } }
+
     </style>
 </head>
 <body>
@@ -282,6 +313,7 @@
         <a href='#pilares'>Nuestros Pilares</a>
         <a href='#convenios'>Convenios</a>
         <a href='#album'>Álbum</a>
+        <a href='#donaciones'>Cómo ayudar</a>
         <a href='#redes'>Nuestras Redes</a>
         <a href='#contacto'>Contacto</a>
     </nav>
@@ -408,6 +440,22 @@
             
             </div>
         </div>
+
+        <section class='donations-section' id='donaciones'>
+            <div class='section-heading'>
+                <span class='eyebrow'>JUNTOS PODEMOS HACER MÁS</span>
+                <h2>Ayúdanos a transformar vidas</h2>
+            </div>
+            <p class='donations-intro'>Tu solidaridad puede abrir oportunidades educativas y acompañar los sueños de niños, jóvenes y estudiantes. Puedes apoyar a FUNCRISMAJ de distintas maneras:</p>
+            <div class='donation-grid'>
+                <article class='donation-card'><div class='donation-icon'><i class='fas fa-pencil-ruler'></i></div><h3>Útiles escolares</h3><p>Cuadernos, lápices, colores, morrales y materiales que acompañen el aprendizaje.</p><a class='donation-action' target='_blank' rel='noopener' href='https://wa.me/573025507802?text=Hola%2C%20quiero%20donar%20%C3%BAtiles%20escolares%20a%20FUNCRISMAJ.'>Coordinar donación</a></article>
+                <article class='donation-card'><div class='donation-icon'><i class='fas fa-laptop'></i></div><h3>Material multimedia y tecnológico</h3><p>Computadores, tabletas, proyectores, televisores y recursos tecnológicos en buen estado.</p><a class='donation-action' target='_blank' rel='noopener' href='https://wa.me/573025507802?text=Hola%2C%20quiero%20donar%20material%20multimedia%20o%20tecnol%C3%B3gico%20a%20FUNCRISMAJ.'>Coordinar donación</a></article>
+                <article class='donation-card'><div class='donation-icon'><i class='fas fa-hands-holding-child'></i></div><h3>Apadrinar un estudiante</h3><p>Contribuye al proceso educativo de un estudiante y ayúdale a continuar construyendo su futuro.</p><a class='donation-action' target='_blank' rel='noopener' href='https://wa.me/573025507802?text=Hola%2C%20quiero%20conocer%20c%C3%B3mo%20apadrinar%20a%20un%20estudiante%20de%20FUNCRISMAJ.'>Quiero apadrinar</a></article>
+                <article class='donation-card'><div class='donation-icon'><i class='fas fa-hand-holding-heart'></i></div><h3>Donación monetaria</h3><p>Tu aporte económico ayuda a fortalecer los programas y las oportunidades educativas de la Fundación.</p><a class='donation-action' target='_blank' rel='noopener' href='https://wa.me/573025507802?text=Hola%2C%20quiero%20realizar%20una%20donaci%C3%B3n%20monetaria%20a%20FUNCRISMAJ.%20Por%20favor%2C%20ind%C3%ADquenme%20c%C3%B3mo%20hacerlo.'>Consultar cómo donar</a></article>
+            </div>
+            <div class='qr-pending'><strong><i class='fas fa-qrcode'></i> Próximamente: donaciones mediante código QR</strong>Estamos definiendo el medio de recepción. El código QR se publicará aquí cuando esté verificado por la Fundación.</div>
+        </section>
+
         <div class='social-section' id='redes'>
             <h2 style='color: #2B6CB0; margin-top: 0;'>Síguenos en nuestras Redes Sociales</h2>
             <p>Mantente al día con nuestras actividades, proyectos y bendiciones diarias.</p>
@@ -430,5 +478,39 @@
             </a>
         </p>
     </footer>
+
+    <button class='assistant-launcher' id='assistantLauncher' type='button' aria-label='Abrir asistente virtual'><i class='fas fa-comments'></i> Amiguito FUNCRISMAJ</button>
+    <section class='assistant-panel' id='assistantPanel' aria-label='Asistente virtual FUNCRISMAJ' aria-live='polite'>
+        <div class='assistant-head'><div><strong><i class='fas fa-heart'></i> Amiguito FUNCRISMAJ</strong><small>Estamos aquí para orientarte</small></div><button class='assistant-close' id='assistantClose' type='button' aria-label='Cerrar'>&times;</button></div>
+        <div class='assistant-messages' id='assistantMessages'><div class='assistant-message bot'>¡Hola! Soy Amiguito FUNCRISMAJ. 😊 Puedo orientarte sobre nuestra oferta educativa y las formas de apoyar la Fundación. ¿Qué deseas conocer?</div></div>
+        <div class='assistant-choices' id='assistantChoices'>
+            <button type='button' data-topic='estudios'>Oferta educativa y matrículas</button>
+            <button type='button' data-topic='validacion'>Bachillerato por ciclos y validación</button>
+            <button type='button' data-topic='donar'>Quiero ayudar o donar</button>
+            <button type='button' data-topic='contacto'>Hablar con la Fundación</button>
+        </div>
+        <div class='assistant-footnote'>Asistente de orientación inicial. Para confirmar cupos, costos y detalles, comunícate con la Fundación.</div>
+    </section>
+    <script>
+    (function(){
+      const launcher=document.getElementById('assistantLauncher');
+      const panel=document.getElementById('assistantPanel');
+      const close=document.getElementById('assistantClose');
+      const messages=document.getElementById('assistantMessages');
+      const choices=document.getElementById('assistantChoices');
+      const wa='https://wa.me/573025507802?text=';
+      function addMessage(text,who){const el=document.createElement('div');el.className='assistant-message '+who;el.textContent=text;messages.appendChild(el);messages.scrollTop=messages.scrollHeight;}
+      launcher.addEventListener('click',()=>{panel.classList.toggle('open');});
+      close.addEventListener('click',()=>panel.classList.remove('open'));
+      const answers={
+        estudios:{text:'En FUNCRISMAJ contamos con preescolar cristiano, primaria, bachillerato, aceleración de primaria y bachillerato por ciclos. Para información actualizada sobre matrículas, cupos y costos, escríbenos por WhatsApp.',msg:'Hola, deseo información sobre la oferta educativa y las matrículas de FUNCRISMAJ.'},
+        validacion:{text:'Podemos orientarte sobre bachillerato por ciclos y validación del bachillerato. Cuéntanos tu caso directamente por WhatsApp para recibir información precisa sobre requisitos y proceso.',msg:'Hola, deseo información sobre bachillerato por ciclos y validación del bachillerato.'},
+        donar:{text:'¡Gracias por querer apoyar nuestra labor! Puedes donar útiles escolares, material multimedia o tecnológico, apadrinar a un estudiante o realizar una donación monetaria. El aporte monetario se coordina por WhatsApp. El código QR estará disponible cuando la Fundación defina y verifique el medio de recepción.',msg:'Hola, quiero conocer cómo apoyar a FUNCRISMAJ mediante una donación.'},
+        contacto:{text:'¡Con gusto! Pulsa el botón de WhatsApp para comunicarte directamente con la Fundación.',msg:'Hola, deseo comunicarme con FUNCRISMAJ.'}
+      };
+      choices.addEventListener('click',e=>{const btn=e.target.closest('button[data-topic]');if(!btn)return;const item=answers[btn.dataset.topic];if(!item)return;addMessage(btn.textContent,'user');addMessage(item.text,'bot');const link=document.createElement('a');link.href=wa+encodeURIComponent(item.msg);link.target='_blank';link.rel='noopener';link.className='donation-action';link.textContent='Continuar por WhatsApp';link.style.margin='0 14px 14px';panel.insertBefore(link,choices);});
+    })();
+    </script>
+
 </body>
 </html>
